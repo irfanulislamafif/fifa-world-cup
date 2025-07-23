@@ -41,8 +41,14 @@
 
 .banner-left {
     padding-left: 45px;
+    flex: 1;
 }
-
+.banner-right {
+    flex:1;
+}
+img {
+    max-width: 100%;
+}
 .banner-right img {
     display: block;
 }
@@ -79,6 +85,9 @@ height: fit-content;
 .upcoming-match-right {
 
 flex:1;
+display: grid;
+grid-template-columns: repeat(3,1fr);
+gap:10px;
 }
 
 .upcoming-match-right img {
@@ -110,4 +119,52 @@ flex:1;
 }
 .card-body {
     padding: 20px;
+}
+
+@media screen and (max-width:992px) {
+    .upcoming-match {
+        flex-direction: column;
+    }
+
+    .upcoming-match-left {
+        flex-direction: row;
+        width: 100%;
+        background-color: transparent;
+    }
+    .upcoming-match-left * {
+        flex: 1;
+    }
+    .upcoming-match-left .btn {
+        border: 1px solid black;
+    }
+    .upcoming-match-right {
+ grid-template-columns: repeat(2,1fr);
+    }
+    .banner h2 {
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 50px;
+    
+}
+}
+
+@media screen and (max-width:768px) {
+    .banner {
+        flex-direction: column;
+        text-align: center;
+
+    }
+
+    .banner .banner-left {
+        margin-bottom: 10px;
+        padding-left: 0;
+        padding-top: 30px;
+
+    }
+
+    .banner .banner-left p {
+        /* max-width: 100%; */
+        margin:15px auto;
+        
+    }
 }
